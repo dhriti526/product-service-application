@@ -2,22 +2,22 @@ package com.dhriti.productservice.Dto;
 
 import java.math.BigDecimal;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class ProductRequest {
+public class ProductDTO {
+	
+	private Integer id;
 	
 	private String name;
 	
 	private String description;
 	
 	private BigDecimal price;
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 	
 	public String getName() {
 		return name;
@@ -37,7 +37,11 @@ public class ProductRequest {
 	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
-	
-	
-
+	public ProductDTO(Integer id, String name, String description, BigDecimal price) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.price = price;
+	}
 }
